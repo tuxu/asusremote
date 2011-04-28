@@ -3,6 +3,7 @@
 	08FB7793FE84155DC02AAC07 /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = 215DFF1510678511001F3126 /* AsusRemote */;
+		activeSDKPreference = macosx10.5;
 		activeTarget = 8DD76F620486A84900D96B5E /* AsusRemote */;
 		breakpoints = (
 		);
@@ -40,7 +41,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					576,
+					364,
 					20,
 					48,
 					43,
@@ -57,18 +58,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 275239957;
-			PBXWorkspaceStateSaveDate = 275239957;
-		};
-		perUserProjectItems = {
-			215DFF72106795B3001F3126 /* PBXTextBookmark */ = 215DFF72106795B3001F3126 /* PBXTextBookmark */;
-			215DFFD410679F0D001F3126 /* PBXTextBookmark */ = 215DFFD410679F0D001F3126 /* PBXTextBookmark */;
-			21E804D31067D95E00EAA275 /* PBXTextBookmark */ = 21E804D31067D95E00EAA275 /* PBXTextBookmark */;
-			21E805031067F08F00EAA275 /* PBXTextBookmark */ = 21E805031067F08F00EAA275 /* PBXTextBookmark */;
-			21E8054C1068077F00EAA275 /* PBXTextBookmark */ = 21E8054C1068077F00EAA275 /* PBXTextBookmark */;
-			21E8054E1068077F00EAA275 /* PBXTextBookmark */ = 21E8054E1068077F00EAA275 /* PBXTextBookmark */;
-			21E8057E10680E2900EAA275 /* XCBuildMessageTextBookmark */ = 21E8057E10680E2900EAA275 /* XCBuildMessageTextBookmark */;
-			21E805A410681A5B00EAA275 /* PBXTextBookmark */ = 21E805A410681A5B00EAA275 /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 296221483;
+			PBXWorkspaceStateSaveDate = 296221483;
 		};
 		sourceControlManager = 215DFF2010678529001F3126 /* Source Control */;
 		userBuildSettings = {
@@ -76,10 +67,10 @@
 	};
 	08FB7796FE84155DC02AAC07 /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1580, 7345}}";
-			sepNavSelRange = "{17554, 0}";
-			sepNavVisRange = "{10426, 1145}";
-			sepNavWindowFrame = "{{15, 138}, {1172, 885}}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 9516}}";
+			sepNavSelRange = "{10606, 0}";
+			sepNavVisRange = "{8055, 1418}";
+			sepNavWindowFrame = "{{7, 66}, {595, 812}}";
 		};
 	};
 	215DFF1510678511001F3126 /* AsusRemote */ = {
@@ -127,123 +118,6 @@
 	215DFF2110678529001F3126 /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
-	};
-	215DFF72106795B3001F3126 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 215DFF73106795B3001F3126 /* IOHIDKeys.h */;
-		name = "IOHIDKeys.h: 37";
-		rLen = 58;
-		rLoc = 1280;
-		rType = 0;
-		vrLen = 1802;
-		vrLoc = 1055;
-	};
-	215DFF73106795B3001F3126 /* IOHIDKeys.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = IOHIDKeys.h;
-		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Versions/A/Headers/hid/IOHIDKeys.h;
-		sourceTree = "<absolute>";
-	};
-	215DFFD410679F0D001F3126 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 215DFFD510679F0D001F3126 /* CoreFoundation.h */;
-		name = "CoreFoundation.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 774;
-		vrLoc = 0;
-	};
-	215DFFD510679F0D001F3126 /* CoreFoundation.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = CoreFoundation.h;
-		path = /System/Library/Frameworks/CoreFoundation.framework/Headers/CoreFoundation.h;
-		sourceTree = "<absolute>";
-	};
-	21E804D31067D95E00EAA275 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 21E804D41067D95E00EAA275 /* errno.h */;
-		name = "errno.h: 96";
-		rLen = 38;
-		rLoc = 4392;
-		rType = 0;
-		vrLen = 1226;
-		vrLoc = 3551;
-	};
-	21E804D41067D95E00EAA275 /* errno.h */ = {
-		isa = PBXFileReference;
-		name = errno.h;
-		path = /Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/errno.h;
-		sourceTree = "<absolute>";
-	};
-	21E805031067F08F00EAA275 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 21E805041067F08F00EAA275 /* CFDate.h */;
-		name = "CFDate.h: 13";
-		rLen = 39;
-		rLoc = 237;
-		rType = 0;
-		vrLen = 926;
-		vrLoc = 0;
-	};
-	21E805041067F08F00EAA275 /* CFDate.h */ = {
-		isa = PBXFileReference;
-		name = CFDate.h;
-		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreFoundation.framework/Versions/A/Headers/CFDate.h;
-		sourceTree = "<absolute>";
-	};
-	21E8054C1068077F00EAA275 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 21E8054D1068077F00EAA275 /* _types.h */;
-		name = "_types.h: 115";
-		rLen = 55;
-		rLoc = 4248;
-		rType = 0;
-		vrLen = 1310;
-		vrLoc = 3193;
-	};
-	21E8054D1068077F00EAA275 /* _types.h */ = {
-		isa = PBXFileReference;
-		name = _types.h;
-		path = /Developer/SDKs/MacOSX10.6.sdk/usr/include/i386/_types.h;
-		sourceTree = "<absolute>";
-	};
-	21E8054E1068077F00EAA275 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 21E8054F1068077F00EAA275 /* time.h */;
-		name = "time.h: 77";
-		rLen = 16;
-		rLoc = 3369;
-		rType = 0;
-		vrLen = 1239;
-		vrLoc = 2564;
-	};
-	21E8054F1068077F00EAA275 /* time.h */ = {
-		isa = PBXFileReference;
-		name = time.h;
-		path = /Developer/SDKs/MacOSX10.6.sdk/usr/include/time.h;
-		sourceTree = "<absolute>";
-	};
-	21E8057E10680E2900EAA275 /* XCBuildMessageTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "Variable or field 'IssueAppleRemoteCommand' declared void";
-		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
-		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 0;
-		rLoc = 607;
-		rType = 1;
-	};
-	21E805A410681A5B00EAA275 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
-		name = "main.cpp: 294";
-		rLen = 0;
-		rLoc = 6973;
-		rType = 0;
-		vrLen = 821;
-		vrLoc = 6939;
 	};
 	8DD76F620486A84900D96B5E /* AsusRemote */ = {
 		activeExec = 0;

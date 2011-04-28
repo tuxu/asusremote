@@ -1,0 +1,9 @@
+tino@rechenknecht:/Volumes/tino/Projekte/AsusRemote-> sudo cp AsusRemote /usr/local/bin/AsusRemote 
+
+tino@rechenknecht:/Volumes/tino/Projekte/AsusRemote-> sudo chown root:wheel /usr/local/bin/AsusRemote
+
+tino@rechenknecht:/Volumes/tino/Projekte/AsusRemote-> sudo chmod +s /usr/local/bin/AsusRemote 
+
+tino@rechenknecht:/Volumes/tino/Projekte/AsusRemote-> ls -l /usr/local/bin/AsusRemote 
+-rwsr-sr-x  1 root  wheel  62060 29 Okt 19:03 /usr/local/bin/AsusRemote
+

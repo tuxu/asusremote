@@ -1,6 +1,6 @@
 /* 
    ASUS DH Remote daemon
-   2009, Tino Wagner <ich@tinowagner.com> 
+   2009-10, Tino Wagner <ich@tinowagner.com> 
  
    Useful Links:
 		<http://www.cocoadev.com/index.pl?UsingTheAppleRemoteControl>
@@ -11,6 +11,7 @@
 #include <sys/sysctl.h>
 
 #include <CoreFoundation/CoreFoundation.h>
+#include <ApplicationServices/ApplicationServices.h>
 #include <IOKit/IOKitLib.h>
 #include <IOKit/IOCFPlugIn.h>
 #include <IOKit/IOMessage.h>
@@ -21,7 +22,9 @@
 #include <IOKit/hidsystem/IOHIDShared.h>
 #include <IOKit/hidsystem/IOHIDParameter.h>
 
-
+// AsusRemote version
+#define VERSION_STRING "v0.2"
+#define AUTHOR_STRING "2009-10, (c) Tino Wagner <ich@tinowagner.com>"
 
 #pragma mark ASUS Key Code Definitions
 
@@ -90,6 +93,8 @@ static CFAbsoluteTime lastTime = 0;
 // pressing a key and deciding on the action.
 const double keyRecogitionDelay = 0.25; 
 
+// Started with the Plex option?
+bool usePlex = false;
 
 
 #pragma mark Declarations (Structures)
@@ -137,6 +142,15 @@ void HandleKeyRelease(UInt8 code);
  * Program entry point.
  */
 int main (const int argc, const char *argv[]) {
+	printf("AsusRemote %s\n%s\n\n", VERSION_STRING, AUTHOR_STRING);
+    
+    if (argc > 1) {
+        if (strcmp(argv[1], "-plex") == 0) {
+            printf("* Emulating key presses for Plex *\n");
+            usePlex = true;
+        }
+    }
+	
     // Initialize HID.
 	Initialize();
 	
@@ -247,6 +261,40 @@ void IssueAppleRemoteCommand(IRKeyboardKey key) {
 void HandleKey(UInt8 code) {
 	printf("Key:          %s\n", GetKeyName(code));
 	
+    if (usePlex) {
+        switch (code) {
+            case KEY_CODE_PLUS:
+                CGPostKeyboardEvent(0, (CGKeyCode)126, true);
+                CGPostKeyboardEvent(0, (CGKeyCode)126, false);
+                break;
+            case KEY_CODE_MINUS:
+                CGPostKeyboardEvent(0, (CGKeyCode)125, true);
+                CGPostKeyboardEvent(0, (CGKeyCode)125, false);
+                break;
+            case KEY_CODE_REV:
+                CGPostKeyboardEvent(0, (CGKeyCode)123, true);
+                CGPostKeyboardEvent(0, (CGKeyCode)123, false);
+                break;
+            case KEY_CODE_FWD:
+                CGPostKeyboardEvent(0, (CGKeyCode)124, true);
+                CGPostKeyboardEvent(0, (CGKeyCode)124, false);
+                break;
+            case KEY_CODE_PLAY_PAUSE:
+                CGPostKeyboardEvent(0, (CGKeyCode)36, true);
+                CGPostKeyboardEvent(0, (CGKeyCode)36, false);
+                break;
+            case KEY_CODE_MAXIMIZE:
+                CGPostKeyboardEvent(0, (CGKeyCode)53, true);
+                CGPostKeyboardEvent(0, (CGKeyCode)53, false);
+                break;
+            case KEY_CODE_AP_LAUNCH:
+                break;
+            default:
+                break;
+        }
+        return;
+    }
+    
 	switch (code) {
 		case KEY_CODE_PLUS:
 			IssueAppleRemoteCommand(UpKey);
@@ -276,6 +324,34 @@ void HandleKey(UInt8 code) {
  */
 void HandleKeyPress(UInt8 code) {
 	printf("Key pressed:  %s\n", GetKeyName(code));
+    
+    if (usePlex) {
+        switch (code) {
+            case KEY_CODE_PLUS:
+                CGPostKeyboardEvent(0, (CGKeyCode)126, true);
+                break;
+            case KEY_CODE_MINUS:
+                CGPostKeyboardEvent(0, (CGKeyCode)125, true);
+                break;
+            case KEY_CODE_REV:
+                CGPostKeyboardEvent(0, (CGKeyCode)123, true);
+                break;
+            case KEY_CODE_FWD:
+                CGPostKeyboardEvent(0, (CGKeyCode)124, true);
+                break;
+            case KEY_CODE_PLAY_PAUSE:
+                CGPostKeyboardEvent(0, (CGKeyCode)36, true);
+                break;
+            case KEY_CODE_MAXIMIZE:
+                CGPostKeyboardEvent(0, (CGKeyCode)53, true);
+                break;
+            case KEY_CODE_AP_LAUNCH:
+                break;
+            default:
+                break;
+        }
+        return;
+    }
 	
 	switch (code) {
 		case KEY_CODE_PLUS:
@@ -306,6 +382,34 @@ void HandleKeyPress(UInt8 code) {
  */
 void HandleKeyRelease(UInt8 code) {
 	printf("Key released: %s\n", GetKeyName(code));
+    
+    if (usePlex) {
+        switch (code) {
+            case KEY_CODE_PLUS:
+                CGPostKeyboardEvent(0, (CGKeyCode)126, false);
+                break;
+            case KEY_CODE_MINUS:
+                CGPostKeyboardEvent(0, (CGKeyCode)125, false);
+                break;
+            case KEY_CODE_REV:
+                CGPostKeyboardEvent(0, (CGKeyCode)123, false);
+                break;
+            case KEY_CODE_FWD:
+                CGPostKeyboardEvent(0, (CGKeyCode)124, false);
+                break;
+            case KEY_CODE_PLAY_PAUSE:
+                CGPostKeyboardEvent(0, (CGKeyCode)36, false);
+                break;
+            case KEY_CODE_MAXIMIZE:
+                CGPostKeyboardEvent(0, (CGKeyCode)53, false);
+                break;
+            case KEY_CODE_AP_LAUNCH:
+                break;
+            default:
+                break;
+        }
+        return;
+    }
 	
 	switch (code) {
 		case KEY_CODE_PLUS:
